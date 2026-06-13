@@ -1,0 +1,4 @@
+interface:
+  display_name: "Decision Audit Collaboration"
+  short_description: "Assumption-first decision audit workflow"
+  default_prompt: "Use $decision-audit-collaboration to audit my assumptions before recommending a decision."
