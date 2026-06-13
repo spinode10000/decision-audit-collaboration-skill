@@ -2,6 +2,18 @@
 
 Use these checklists only when the task needs more rigor than the compact SKILL.md workflow.
 
+## Role Group Routing
+
+- If the question may be malformed, start with Premise Auditor only.
+- If the user needs a product, business, or technical route, add First-Principles Builder.
+- If the decision affects money, compliance, customer promises, or production systems, add Red-Team Attacker.
+- If the user needs a clear choice, add Verdict Judge.
+- If the user says "start", "continue", or "execute", add Action Compressor.
+- If claims depend on laws, data, code, or public facts, add Evidence Verifier.
+- If uncertainty can be tested, add Validation Designer.
+- If the user returns with results, add Reality Reviewer.
+- If the pattern should become reusable, add Rule Distiller.
+
 ## Premise Audit
 
 - What must be true for the user's question to be well-formed?
@@ -46,6 +58,22 @@ Use these checklists only when the task needs more rigor than the compact SKILL.
 - Fix now:
 - Prevent later:
 - Should this become a rule? Only if repeated, costly, stable, and easy to validate.
+
+## Role Group Compact Output
+
+Use this when the user wants the full role group but the response must stay short:
+
+```markdown
+Premise Auditor: ...
+First-Principles Builder: ...
+Red-Team Attacker: ...
+Verdict Judge: ...
+Action Compressor: ...
+Evidence Verifier: ...
+Validation Designer: ...
+Reality Reviewer: ...
+Rule Distiller: ...
+```
 
 ## Useful Verdict Language
 

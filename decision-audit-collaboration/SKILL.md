@@ -1,104 +1,108 @@
 ---
 name: decision-audit-collaboration
-description: Assumption-first decision audit workflow for high-stakes or ambiguous decisions. Use when the user asks for strategic advice, product/business decisions, compliance or data-risk judgments, architecture choices, prioritization, workflow design, or says to audit assumptions, attack a plan, decide between options, verify evidence, run a small validation,???, or??????. Do not use for trivial low-risk edits or simple factual commands unless the user explicitly requests decision audit.
+description: Assumption-first decision audit role group for high-stakes or ambiguous decisions. Use when the user asks for strategic advice, product/business decisions, compliance or data-risk judgment, architecture choices, prioritization, workflow design, premise review, plan attack, evidence checking, validation design, post-result review, or durable rule distillation. Do not use for trivial low-risk edits or simple factual commands unless the user explicitly requests decision audit.
 ---
 
 # Decision Audit Collaboration
 
-Use this skill to slow down important decisions just enough to prevent expensive mistakes. The default posture is: audit the premise before recommending a solution.
+Use this skill to slow important decisions just enough to prevent expensive mistakes. The default posture is: audit the premise before recommending a solution.
+
+This is a role group, not role-play. Each role represents a required decision function. Do not imitate famous people or personalities; extract useful reasoning patterns and keep the output practical.
 
 ## Fast Triage
 
-Classify the request before choosing the process depth:
+Choose process depth before answering:
 
-- **High risk**: compliance, legal exposure, money, production systems, customer promises, irreversible changes, public claims, strategy. Use the full audit.
-- **Medium risk**: product priorities, implementation approach, uncertain assumptions, data quality, go-to-market choices. Use premise review, option split, attack,???, and a small validation.
-- **Low risk**: small copy edits, simple commands, obvious bug fixes, reversible local work. Execute directly and add a brief note if any assumption matters.
+- **High risk**: compliance, legal exposure, money, production systems, customer promises, irreversible changes, public claims, strategy. Use the full role group.
+- **Medium risk**: product priorities, implementation approach, uncertain assumptions, data quality, go-to-market choices. Use premise review, options, attack, verdict, and validation.
+- **Low risk**: small copy edits, simple commands, obvious bug fixes, reversible local work. Execute directly and mention only the relevant assumption.
 
-If time is urgent, do a quick audit: premise, biggest risk, next action, validation check.
+If time is urgent, use a quick audit: premise, biggest risk, next action, validation check.
 
-## Core Workflow
+## Decision Audit Role Group
 
-Follow this order unless the user explicitly asks for a different mode:
+Run these roles in order unless the user asks for a narrower mode.
 
-1. **?????/ Audit premises**
-   - Restate the user's implicit and explicit assumptions.
-   - Mark each as: verified fact, reasonable inference, risky assumption, or unknown.
-   - Identify whether the question might be malformed.
+1. **Premise Auditor**
+   - Restates explicit and implicit assumptions.
+   - Labels each as verified, inference, risky assumption, or unknown.
+   - Checks whether the question is malformed.
+   - Stops the workflow if the premise is false enough that options would be misleading.
 
-2. **?????/ Split options**
-   - Produce 1-3 viable paths.
-   - Include the conservative path when stakes are high.
-   - Avoid too many options; decision audit should reduce fog, not create it.
+2. **First-Principles Builder**
+   - Breaks the problem into value, cost, constraints, incentives, data, delivery path, and irreversible risks.
+   - Removes decorative or inherited assumptions.
+   - Finds the smallest unit that can prove or disprove the opportunity.
 
-3. **?????? / Attack the plan**
-   - Look for failure modes, hidden dependencies, missing evidence, incentives, legal/data wording risk, operational burden, and false certainty.
-   - Attack your own preferred option as well.
+3. **Red-Team Attacker**
+   - Attacks the preferred plan and the user's preferred premise.
+   - Looks for failure modes, hidden dependencies, stale data, compliance wording risk, operational burden, customer objections, and false certainty.
+   - Names what would break first in reality.
 
-4. **??? / Decide**
-   - Recommend one path.
-   - State why rejected options are weaker.
-   - Name confidence level and what would change the decision.
+4. **Verdict Judge**
+   - Chooses one path or says not to proceed.
+   - States confidence and what evidence would change the verdict.
+   - Separates technical truth, legal/compliance truth, commercial truth, and operational truth.
 
-5. **?????? / Compress into actions**
-   - Turn the decision into concrete next steps.
-   - Prefer small reversible tests before broad rollout.
-   - Assign owner: user, Codex, external expert, customer, data source, or system.
+5. **Action Compressor**
+   - Converts the verdict into concrete next actions.
+   - Prefers reversible tests before broad rollout.
+   - Assigns owner: user, Codex, external expert, customer, data source, system, or regulator.
 
-6. **????????/ Check source evidence**
-   - Use primary sources where possible: official docs, source code, logs, database rows, contracts, laws, raw datasets.
-   - Label unsupported claims clearly.
-   - If browsing or live verification is needed, do it before making time-sensitive claims.
+6. **Evidence Verifier**
+   - Checks primary sources where possible: official docs, source code, logs, database rows, contracts, laws, raw datasets.
+   - Records source, version, freshness, and uncertainty.
+   - Labels unsupported claims clearly.
 
-7. **????????/ Small validation**
-   - Propose or run the smallest meaningful test.
-   - Define pass/fail criteria before interpreting results.
-   - Preserve artifacts when useful: command output, report, screenshot, JSON, diff, or audit log.
+7. **Validation Designer**
+   - Designs or runs the smallest meaningful real-world test.
+   - Defines pass/fail criteria before interpreting results.
+   - Preserves artifacts when useful: command output, report, screenshot, JSON, diff, or audit log.
 
-8. **?????? / Review reality feedback**
-   - When the user brings back results, compare expected vs actual.
-   - Find whether the error came from premise, plan, execution, data, timing, or communication.
+8. **Reality Reviewer**
+   - When the user brings back results, compares expected vs actual.
+   - Finds whether the error came from premise, plan, execution, data, timing, or communication.
 
-9. **?????? / Distill rules**
-   - Create a long-term rule only when the pattern is repeated, costly, and stable.
-   - Prefer the smallest useful form: a checklist, script, automation, skill, subagent, or no new asset.
+9. **Rule Distiller**
+   - Creates a long-term rule only when the pattern is repeated, costly, stable, and easy to validate.
+   - Chooses the smallest useful asset: checklist, script, automation, skill, subagent, or no new asset.
 
 ## Output Pattern
 
 For high or medium risk decisions, use this compact structure:
 
 ```markdown
-**??????**
+**Premise Audit**
 - Verified:
 - Inference:
 - Risky assumption:
 - Unknown:
 
-**???**
+**Options**
 1. ...
 2. ...
 
-**???**
+**Attack**
 - ...
 
-**???**
+**Verdict**
 Recommended path: ...
 Confidence: high / medium / low
 Would change if: ...
 
-**?????*
+**Actions**
 1. ...
 2. ...
 
-**???**
+**Validation**
 Pass/fail criteria: ...
 ```
 
-For casual conversations, keep the same reasoning but respond more naturally and with fewer headings.
+For casual conversations, keep the same reasoning but respond naturally with fewer headings.
 
-## Evidence Discipline
+## Evidence Labels
 
-Use four evidence labels:
+Use these labels consistently:
 
 - **Verified**: checked against source, tool output, file, log, official publication, or direct user evidence.
 - **Inference**: likely based on available context but not directly proven.
@@ -133,8 +137,9 @@ Codex is responsible for:
 - deciding and explaining tradeoffs,
 - compressing decisions into action,
 - checking source evidence,
-- helping???,
-- proposing reusable rules only when justified.
+- designing or running small validations,
+- reviewing real feedback,
+- proposing durable rules only when justified.
 
 The user is responsible for:
 
@@ -145,5 +150,5 @@ The user is responsible for:
 
 ## References
 
-Read `references/audit-checklists.md` when the task needs a reusable checklist for premise review, plan attack, validation design, or???.
-
+- Read `references/role-group.md` when the user explicitly asks to use the role group or when a decision is high risk.
+- Read `references/audit-checklists.md` when the task needs a reusable checklist for premise review, plan attack, evidence checking, validation design, or rule distillation.

@@ -1,10 +1,10 @@
 # Decision Audit Collaboration Skill
 
-An assumption-first decision audit workflow for Codex-style AI collaboration.
+An assumption-first decision audit role group for AI collaboration.
 
 This skill helps an AI assistant avoid rushing to conclusions on high-stakes or ambiguous problems. It turns a question into a disciplined loop:
 
-> premise audit -> options -> attack -> verdict -> actions -> source evidence -> small validation -> review -> reusable rule
+> premise audit -> first-principles split -> red-team attack -> verdict -> actions -> evidence -> validation -> reality review -> durable rule
 
 ## What It Is For
 
@@ -15,11 +15,27 @@ This skill helps an AI assistant avoid rushing to conclusions on high-stakes or 
 - strategic planning
 - post-result review and rule distillation
 
-It is intentionally not a role-play prompt. The point is not to simulate many personas, but to preserve the checks that make multi-perspective work useful.
+It is intentionally not a personality role-play prompt. The point is not to imitate famous people, but to preserve the checks that make multi-perspective work useful.
+
+## Role Group
+
+- Premise Auditor: checks whether the question is well formed.
+- First-Principles Builder: reduces the problem to value, cost, constraints, and reality.
+- Red-Team Attacker: finds failure modes and hidden dependencies.
+- Verdict Judge: chooses, defers, or rejects.
+- Action Compressor: turns the verdict into concrete work.
+- Evidence Verifier: checks primary sources and labels uncertainty.
+- Validation Designer: creates the smallest meaningful test.
+- Reality Reviewer: compares expected and actual results.
+- Rule Distiller: decides whether the lesson should become a durable rule.
 
 ## Install
 
-Copy the `decision-audit-collaboration` folder into your Codex skills directory:
+```bash
+npx skills add spinode10000/decision-audit-collaboration-skill
+```
+
+Or copy the `decision-audit-collaboration` folder into your Codex skills directory:
 
 ```bash
 mkdir -p ~/.codex/skills
@@ -31,18 +47,6 @@ Then ask:
 ```text
 Use $decision-audit-collaboration to audit my assumptions before recommending a decision.
 ```
-
-## Core Idea
-
-Many failures do not come from bad execution. They come from a wrong starting assumption.
-
-This skill makes the assistant start with:
-
-```text
-Is the premise reliable?
-```
-
-Only then should it recommend an action.
 
 ## License
 
