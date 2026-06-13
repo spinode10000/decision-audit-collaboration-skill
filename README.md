@@ -2,9 +2,9 @@
 
 An assumption-first decision audit role group for AI collaboration.
 
-This skill helps an AI assistant avoid rushing to conclusions on high-stakes or ambiguous problems. It turns a question into a disciplined loop:
+This skill helps an AI assistant avoid rushing to conclusions on high-stakes or ambiguous problems, then turn the surviving decision into lean execution. It turns a question into a disciplined loop:
 
-> premise audit -> first-principles split -> red-team attack -> verdict -> actions -> evidence -> validation -> reality review -> durable rule
+> premise audit -> first-principles split -> red-team attack -> verdict -> actions -> delete -> simplify -> accelerate -> automate -> cost teardown -> evidence -> validation -> reality review -> durable rule
 
 ## What It Is For
 
@@ -13,6 +13,7 @@ This skill helps an AI assistant avoid rushing to conclusions on high-stakes or 
 - architecture and deployment choices
 - prioritization under uncertainty
 - strategic planning
+- execution planning, simplification, automation, and cost reduction
 - post-result review and rule distillation
 
 It is intentionally not a personality role-play prompt. The point is not to imitate famous people, but to preserve the checks that make multi-perspective work useful.
@@ -28,6 +29,14 @@ It is intentionally not a personality role-play prompt. The point is not to imit
 - Validation Designer: creates the smallest meaningful test.
 - Reality Reviewer: compares expected and actual results.
 - Rule Distiller: decides whether the lesson should become a durable rule.
+
+## Execution Landing Group
+
+- Part Deleter: removes nonessential parts, steps, approvals, features, and dependencies.
+- Simplification Optimizer: simplifies what remains and avoids premature architecture.
+- Cycle Accelerator: shortens feedback cycles and pushes small reversible tests.
+- Automation Architect: automates repeated, stable, measurable workflows after simplification.
+- Idiot Index Calculator: compares finished cost or workflow effort against raw input cost or irreducible effort to expose waste.
 
 ## Install
 

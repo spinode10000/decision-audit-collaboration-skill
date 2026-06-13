@@ -1,4 +1,4 @@
 interface:
   display_name: "Decision Audit Collaboration"
-  short_description: "Assumption-first decision audit role group"
-  default_prompt: "Use $decision-audit-collaboration as a decision audit role group: audit premises, attack the plan, give a verdict, compress actions, and define validation."
+  short_description: "Assumption-first decision audit and execution role group"
+  default_prompt: "Use $decision-audit-collaboration as a decision audit and execution role group: audit premises, attack the plan, give a verdict, compress actions, delete unnecessary parts, simplify, accelerate cycles, automate proven repetition, estimate waste, and define validation."

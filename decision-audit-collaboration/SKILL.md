@@ -1,11 +1,11 @@
 ---
 name: decision-audit-collaboration
-description: Assumption-first decision audit role group for high-stakes or ambiguous decisions. Use when the user asks for strategic advice, product/business decisions, compliance or data-risk judgment, architecture choices, prioritization, workflow design, premise review, plan attack, evidence checking, validation design, post-result review, or durable rule distillation. Do not use for trivial low-risk edits or simple factual commands unless the user explicitly requests decision audit.
+description: Assumption-first decision audit and execution role group for high-stakes or ambiguous decisions. Use when the user asks for strategic advice, product/business decisions, compliance or data-risk judgment, architecture choices, prioritization, workflow design, premise review, plan attack, evidence checking, validation design, execution planning, simplification, automation, cost reduction, post-result review, or durable rule distillation. Do not use for trivial low-risk edits or simple factual commands unless the user explicitly requests decision audit.
 ---
 
 # Decision Audit Collaboration
 
-Use this skill to slow important decisions just enough to prevent expensive mistakes. The default posture is: audit the premise before recommending a solution.
+Use this skill to slow important decisions just enough to prevent expensive mistakes, then compress the surviving plan into execution. The default posture is: audit the premise before recommending a solution; when the user asks to start, build, optimize, or continue, add the execution landing group.
 
 This is a role group, not role-play. Each role represents a required decision function. Do not imitate famous people or personalities; extract useful reasoning patterns and keep the output practical.
 
@@ -15,6 +15,7 @@ Choose process depth before answering:
 
 - **High risk**: compliance, legal exposure, money, production systems, customer promises, irreversible changes, public claims, strategy. Use the full role group.
 - **Medium risk**: product priorities, implementation approach, uncertain assumptions, data quality, go-to-market choices. Use premise review, options, attack, verdict, and validation.
+- **Execution work**: building, optimizing, shipping, reducing scope, reducing cost, or automating. Add the Execution Landing Group after the verdict.
 - **Low risk**: small copy edits, simple commands, obvious bug fixes, reversible local work. Execute directly and mention only the relevant assumption.
 
 If time is urgent, use a quick audit: premise, biggest risk, next action, validation check.
@@ -67,6 +68,35 @@ Run these roles in order unless the user asks for a narrower mode.
    - Creates a long-term rule only when the pattern is repeated, costly, stable, and easy to validate.
    - Chooses the smallest useful asset: checklist, script, automation, skill, subagent, or no new asset.
 
+## Execution Landing Group
+
+Use these roles after the verdict when the work must be built, simplified, accelerated, automated, or made cheaper. They are not a substitute for premise audit; they prevent the chosen plan from becoming bloated during execution.
+
+1. **Part Deleter**
+   - Deletes nonessential parts, steps, approvals, features, files, meetings, and dependencies.
+   - Asks for each part: "Must this exist for the current validated goal?"
+   - If nothing ever needs to be added back, assume deletion was too timid.
+
+2. **Simplification Optimizer**
+   - Simplifies what remains after deletion.
+   - Rejects over-engineering, speculative "future proofing", and architecture that solves problems not yet proven.
+   - Keeps the smallest implementation that solves the current problem and can be changed later.
+
+3. **Cycle Accelerator**
+   - Shortens development, test, feedback, and release loops.
+   - Prefers fast reversible experiments over slow perfect plans.
+   - Identifies the next cycle, expected artifact, and correction path.
+
+4. **Automation Architect**
+   - Automates repeated, standardized, measurable work only after the first four steps have stabilized it.
+   - Converts proven manual steps into scripts, checks, pipelines, templates, dashboards, or scheduled jobs.
+   - Avoids automating waste, unclear judgment, or unvalidated workflows.
+
+5. **Idiot Index Calculator**
+   - Compares final cost or effort against the raw input cost or irreducible work.
+   - Ratio: finished cost / raw material cost, or total workflow effort / irreducible direct effort when money is not the right unit.
+   - Uses a high ratio to expose middle-layer waste, handoffs, markup, rework, unnecessary tooling, or avoidable complexity.
+
 ## Output Pattern
 
 For high or medium risk decisions, use this compact structure:
@@ -93,6 +123,13 @@ Would change if: ...
 **Actions**
 1. ...
 2. ...
+
+**Execution Landing**
+- Delete:
+- Simplify:
+- Accelerate:
+- Automate:
+- Cost ratio / waste signal:
 
 **Validation**
 Pass/fail criteria: ...
@@ -138,6 +175,11 @@ Codex is responsible for:
 - compressing decisions into action,
 - checking source evidence,
 - designing or running small validations,
+- deleting unnecessary scope,
+- simplifying the surviving implementation,
+- accelerating feedback cycles,
+- automating proven repeated steps,
+- exposing avoidable cost and effort,
 - reviewing real feedback,
 - proposing durable rules only when justified.
 
@@ -151,4 +193,5 @@ The user is responsible for:
 ## References
 
 - Read `references/role-group.md` when the user explicitly asks to use the role group or when a decision is high risk.
-- Read `references/audit-checklists.md` when the task needs a reusable checklist for premise review, plan attack, evidence checking, validation design, or rule distillation.
+- Read `references/role-group.md` when the user explicitly asks for execution roles, reduction, acceleration, automation, or cost teardown.
+- Read `references/audit-checklists.md` when the task needs a reusable checklist for premise review, plan attack, evidence checking, validation design, execution landing, cost teardown, or rule distillation.

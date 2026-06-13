@@ -1,6 +1,6 @@
 # Decision Audit Role Group
 
-Use this reference when the user wants the full role group, the decision is high risk, or a previous answer needs a deeper audit.
+Use this reference when the user wants the full role group, the decision is high risk, or a previous answer needs a deeper audit. For execution work, run the Decision Audit Role Group first, then the Execution Landing Group.
 
 ## Role 1: Premise Auditor
 
@@ -176,3 +176,118 @@ Asset choice:
 
 Forbidden:
 - Do not package a one-off insight into a permanent rule.
+
+# Execution Landing Group
+
+Use this group after a verdict when the user asks to start, continue, build, optimize, simplify, automate, ship, reduce cost, or make a plan executable.
+
+## Execution Role 1: Part Deleter
+
+Purpose: remove every part that is not required for the current validated goal.
+
+Inputs:
+- The chosen plan or feature.
+- The current goal.
+- Known constraints and pass/fail criteria.
+
+Ask:
+- Does this part directly create value, reduce a verified risk, or satisfy a real constraint?
+- What breaks if this part is removed?
+- Can this be replaced by a manual step, checklist, existing tool, or later iteration?
+- Is this here because of habit, fear, status, or vague future-proofing?
+
+Outputs:
+- Delete now.
+- Keep because.
+- Defer until evidence.
+- Add-back trigger.
+
+Forbidden:
+- Do not delete legal, safety, security, traceability, or customer-trust requirements just because they feel slow.
+- Do not delete evidence collection before learning has been preserved.
+
+## Execution Role 2: Simplification Optimizer
+
+Purpose: make the surviving plan as simple as possible without breaking the goal.
+
+Ask:
+- Can one function, page, script, table, or decision replace several?
+- Can existing tools or patterns solve this?
+- Can the first version be narrower?
+- What complexity exists only to satisfy an imagined future?
+
+Outputs:
+- Simplified design.
+- Non-negotiable complexity.
+- Complexity removed.
+- Later expansion path.
+
+Forbidden:
+- Do not optimize before deleting.
+- Do not introduce abstractions before repeated use proves they are needed.
+
+## Execution Role 3: Cycle Accelerator
+
+Purpose: compress the time between action, feedback, and correction.
+
+Ask:
+- What is the smallest next cycle that produces observable evidence?
+- What can be tested locally before production?
+- What can be shipped to one user, one page, one dataset, or one scenario first?
+- What decision is being delayed by perfectionism?
+
+Outputs:
+- Next cycle.
+- Time box.
+- Artifact.
+- Feedback source.
+- Correction path.
+
+Forbidden:
+- Do not speed up irreversible, legally risky, or customer-trust-sensitive actions without guardrails.
+- Do not confuse motion with learning.
+
+## Execution Role 4: Automation Architect
+
+Purpose: turn proven repeated work into a reliable system.
+
+Ask:
+- Is the process repeated, stable, measurable, and worth automating?
+- Which manual step creates errors or delay?
+- What input, output, owner, and failure mode must the automation have?
+- How will a human audit the automation?
+
+Outputs:
+- Automate now.
+- Keep manual.
+- Automation boundary.
+- Monitoring and rollback.
+
+Forbidden:
+- Do not automate unclear judgment.
+- Do not automate a bloated process before deletion and simplification.
+
+## Execution Role 5: Idiot Index Calculator
+
+Purpose: expose avoidable waste by comparing finished cost to raw input cost or irreducible direct effort.
+
+Use:
+- Money ratio when raw material/input costs are known.
+- Effort ratio when money is not clear: total workflow hours / direct necessary work hours.
+- Latency ratio when speed matters: total elapsed time / actual active work time.
+
+Ask:
+- What is the raw input cost or irreducible effort?
+- What is the finished cost or total workflow effort?
+- Which layer explains the gap?
+- Can we remove, simplify, internalize, automate, or renegotiate that layer?
+
+Outputs:
+- Ratio.
+- Waste drivers.
+- Highest leverage reduction.
+- Evidence needed for a better estimate.
+
+Forbidden:
+- Do not present a rough estimate as accounting truth.
+- Do not use cost reduction to justify quality, safety, compliance, or trust failures.
